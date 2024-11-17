@@ -1,0 +1,16 @@
+[package]
+name = "crowd_funding"
+version = "1.0.0"
+authors = []
+
+[addresses]
+Crowdfunding="0xa12605d185ceeaa7d8c888fdc435d16b856adfb41e26734331cc4796ebd9ecf3"
+[dev-addresses]
+
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
