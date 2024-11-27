@@ -1,16 +1,15 @@
 [package]
-name = "crowd_funding"
-version = "1.0.0"
-authors = []
+name = "crowdfunding"
+version = "0.0.1"
+upgrade_policy = "compatible"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework", rev = "mainnet" }
+AptosStdlib = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-stdlib", rev = "mainnet" }
+MoveStdlib = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/move-stdlib", rev = "mainnet" }
 
 [addresses]
-Crowdfunding="0xa12605d185ceeaa7d8c888fdc435d16b856adfb41e26734331cc4796ebd9ecf3"
-[dev-addresses]
-
-
-[dependencies.AptosFramework]
-git = "https://github.com/aptos-labs/aptos-core.git"
-rev = "mainnet"
-subdir = "aptos-move/framework/aptos-framework"
-
-[dev-dependencies]
+std = "0x1"
+aptos_std = "0x1"
+aptos_framework = "0x1"
+crowdfunding = "0x42"

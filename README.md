@@ -1,78 +1,52 @@
-# Milestone-Based Crowdfunding Smart Contract
+**Student Crowdfunding Platform**
 
-## Introduction
-The Milestone-Based Crowdfunding Smart Contract is a decentralized application built on the Aptos blockchain that enables secure and transparent fundraising with milestone-based fund releases. This innovative approach ensures that project funds are released gradually based on achieved milestones, providing better security for investors and accountability for project creators.
+**Vision**
 
-## Project Overview
-The smart contract implements a crowdfunding system where:
-- Project creators can initialize fundraising campaigns with specific targets
-- Funds are locked in the smart contract
-- Two predefined milestones control the release of funds
-- Only project owners can request milestone releases
-- Automatic verification of milestone conditions before fund release
+The **Student Crowdfunding Platform** aims to provide a decentralized way for students to raise funds for their educational expenses. Built on the Aptos blockchain, the platform allows students to create crowdfunding campaigns and receive contributions in cryptocurrency, ensuring secure and transparent transactions.
 
-### Key Features
-- **Secure Fund Management**: All funds are securely stored in the smart contract
-- **Milestone-Based Releases**: Two-stage milestone system for gradual fund release
-- **Permission Control**: Only authorized project owners can release milestone funds
-- **Balance Verification**: Automatic checking of sufficient funds before releases
+**Features**
 
-## Vision
-The vision of this project is to revolutionize crowdfunding by introducing accountability and transparency through blockchain technology. By implementing milestone-based fund releases, we aim to:
-1. Reduce investment risks in crowdfunding projects
-2. Ensure project accountability
-3. Create a trustless environment for fundraising
-4. Promote successful project completion
-5. Build investor confidence in crowdfunding platforms
+- **Campaign Creation**: Students can create new crowdfunding campaigns by specifying their funding goals.
+- **Contribution System**: Users can contribute directly to the campaigns using the Aptos Coin, and their contributions are reflected on the blockchain.
+- **Automatic Campaign Management**: Campaigns automatically deactivate when the goal is met.
+- **Real-time Campaign Information**: Users can view the details of the most recent campaigns, including goal amounts, raised amounts, and active status.
 
-## Future Goals
-Our roadmap includes several planned enhancements:
+**Smart Contract Information**
 
-### Short-term Goals
-- Add support for dynamic milestone creation
-- Implement voting mechanism for milestone approval
-- Create events for better tracking of contract activities
-- Add time-based milestone locks
+The backend of the platform is powered by a smart contract written in the Move language and deployed on the Aptos blockchain. Key details of the contract:
 
-### Medium-term Goals
-- Develop a frontend interface for easy interaction
-- Integrate multiple token support beyond AptosCoin
-- Add project updates and reporting functionality
-- Implement milestone verification oracles
+**Contract Functions**
 
-### Long-term Goals
-- Create a DAO governance system for project oversight
-- Develop cross-chain crowdfunding capabilities
-- Implement AI-based project success prediction
-- Build a reputation system for project creators
+1. **Create Campaign**:
+   1. Function: create\_campaign(account: &signer, goal\_amount: u64)
+   1. Purpose: Initializes a new campaign for a student with a specified funding goal.
+1. **View Campaign**:
+   1. Function: view\_recent\_campaign(addr: address): (u64, u64, bool)
+   1. Purpose: Retrieves the details of the most recent campaign, including the goal, current raised amount, and active status.
+1. **Contribute**:
+   1. Function: contribute(account: &signer, campaign\_owner: address, amount: u64)
+   1. Purpose: Allows users to contribute Aptos Coins to the campaign of a specific student.
 
-## Deployment Information
-- **Network**: Aptos Devnet
-- **Contract Address**: `0xa12605d185ceeaa7d8c888fdc435d16b856adfb41e26734331cc4796ebd9ecf3`
-- **Module Name**: `milestone_crowdfunding`
-- **Module Path**: `aptos_crowdfunding::milestone_crowdfunding`
+**Deployment**
 
-## How to Use
-1. Initialize a project:
-```bash
-aptos move run --function-id 'address::milestone_crowdfunding::initialize_project' \
-    --args 'u64:target_amount' 'u64:milestone1_amount' 'u64:milestone2_amount'
-```
+- **Network**: Aptos
+- **Contract Address**: 0xa8b10ab4bf87b830aa1d6cc7c3e40825f28c0a8eb44ba3b1b2ce64e7fd79eaff
+- **LINK** : https://explorer.aptoslabs.com/txn/41912873?network=devnet
+- **Transaction Hash:** 0xeef4b8d71829c1cdccb3d416ae74bbc7d4f25c14b02733799721dacc62c0c254
+- **Coin Used**: Aptos Coin (APT)
 
-2. Release milestone funds:
-```bash
-aptos move run --function-id 'address::milestone_crowdfunding::release_milestone' \
-    --args 'u64:milestone_number'
-```
+![Screenshot 2024-09-22 190706](https://github.com/user-attachments/assets/d4dc961a-4ac8-4c37-963a-975728c64140)
 
-## Security Considerations
-- Only project owners can release milestone funds
-- Automatic balance verification before releases
-- Built-in permission checks
-- Milestone release status tracking
 
-## Contributing
-We welcome contributions! Please feel free to submit pull requests or create issues for any bugs or feature requests.
+**Getting Started**
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+To get started with this project, follow these steps:
+
+1. **Install Dependencies**: Run npm install to install the necessary dependencies for the React frontend.
+1. **Run Frontend**: Run npm start to start the React application locally.
+1. **Connect Wallet**: Ensure your Aptos-compatible wallet (like Petra Wallet) is connected to interact with the platform.
+
+**Conclusion**
+
+The Student Crowdfunding Platform provides a decentralized, trustless way for students to raise money for their education while allowing contributors to directly support students' educational goals with secure transactions on the blockchain.
+
